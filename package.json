@@ -1,0 +1,43 @@
+{
+  "name": "gitmo-cli",
+  "version": "1.0.3",
+  "description": "An simple CLI for GitHub with an extra texture of emoji which look so cool and add more attractive commit to your git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamsahmedansari/gitmo-cli.git"
+  },
+  "keywords": [
+    "github",
+    "git",
+    "git",
+    "commit",
+    "commit",
+    "cli",
+    "emoji",
+    "cool",
+    "nodejs",
+    "gitlab"
+  ],
+  "author": "Hams Ahmed Ansari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamsahmedansari/gitmo-cli/issues"
+  },
+  "homepage": "https://github.com/hamsahmedansari/gitmo-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.3.1",
+    "shelljs": "^0.8.3",
+    "yargs": "^13.2.2"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "gitmo": "./index.js"
+  }
+}
