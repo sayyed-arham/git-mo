@@ -68,7 +68,13 @@ if ("h" in command) {
   // add d file as FIXED and
   if (command[helperCommand.deploy].length) {
     deploy(command[helperCommand.deploy]);
-  } else {
+  } else if(helperCommand.improveStructure in command){
+    // improver file structure
+    if (command[helperCommand.improveStructure].length) {
+     format(command[helperCommand.improveStructure]) 
+    }
+  }
+   else {
     console.log(chalk.redBright("Commit is not exist"));
   }
   // } else if (helperCommand.revert in command) {
@@ -77,11 +83,6 @@ if ("h" in command) {
   //   // It will add package.json file to your git and github with emoji
   // } else if (helperCommand.removeDependance in command) {
   //   // It will add package.json file to your git and github with emoji
-} else if(helperCommand.improveStructure in command){
-  // improve file structure
-  if (command[helperCommand.improveStructure].length) {
-   format(command[helperCommand.improveStructure]) 
-  }
 } else {
   // show help
   help();
