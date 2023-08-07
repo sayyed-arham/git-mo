@@ -1,124 +1,95 @@
-# Gitmo-Cli
+# Project Title
 
-This is an amazing CLI or you can use as boilerplate for git commit
+One Paragraph of project description goes here
 
-## Feature
+## GitMo-CLI
 
-Some Feature are list below...
+<!-- Testing -->
 
-1. Initialize Git Repository
-   - **INIT** Git Repository.
-   - Check **readme.md** if not exist create one.
-   - Check **.gitignore** if not exist create one.
-   - Ask For Your GitHub **Remote**.
-   - Add All files.
-   - Add Beautiful Git Commit with **EMOJI**.
-2. Update Git Repository
-   - Add All files to your git.
-   - Add Beautiful Git Commit as Update with Special **EMOJI** and add track files as commit description.
-3. Remove Files From Git Repository
-   - Remove Given Files From Tracking
-   - Add Beautiful Git Commit as Remove with Special **EMOJI** and add untracked files as commit description.
-4. Fixed Bug Commit.
-   - Add All files to your git.
-   - Add Beautiful Git Commit as **BUG** Fixed with Special **EMOJI** and add track files as commit description.
-5. Update Readme.md
-   - Add **readme.md** to your git.
-   - Add Beautiful Git Commit as Readme.Update with Special **EMOJI**.
-6. Deploy Git Commit - Add All files to your git.
-   - Add Beautiful Git Commit as **Deploy** with Special **EMOJI** and add track files as commit description
+This Project is creating using GitMo-CLI which is cli for git and github
+This Cli add beautiful commit and save time
+[https://github.com/hamsahmedansari/gitmo-cli](https://github.com/hamsahmedansari/gitmo-cli)
 
-## Instalation
+## Getting Started
 
-```
-npm i gitmo-cli
-```
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-or
+### Prerequisites
 
-```
-yarn add gitmo-cli
-```
+What things you need to install the software and how to install them
 
-after that you can use Gitmo-Cli by `gitmo [command] [argu]`
+"""
+Give examples
+"""
 
-### Help
+### Installing
 
-```
-gitmo -h
-```
+A step by step series of examples that tell you how to get a development env running
 
-or
+Say what the step will be
 
-```
-gitmo
-```
+"""
+Give the example
+"""
 
-![](https://i.imgur.com/mZmPWhO.png)
+And repeat
 
-### Initialized Git Repository
+"""
+until finished
+"""
 
-```
-gitmo -i
-```
+End with an example of getting some data out of the system or using it for a little demo
 
-it ask for your github repo url with .git extension provide it. and it will create repo with readme.md and .gitignore if not exist then push to your remote server.
-**Note :** You can init your working dir.
+## Running the tests
 
-### Update Git Repository
+Explain how to run the automated tests for this system
 
-```
-gitmo -u [msg]
-```
+### Break down into end to end tests
 
-### Remove From Git Repository
+Explain what these tests test and why
 
-```
-gitmo -r [msg] [files]
-```
+"""
+Give an example
+"""
 
-### Fixed Git Commit
+### And coding style tests
 
-```
-gitmo -f [msg]
-```
+Explain what these tests test and why
 
-### Readme.md Update
+"""
+Give an example
+"""
 
-```
-gitmo -R [msg]
-```
+## Deployment
 
-### Deploy Update
+Add additional notes about how to deploy this on a live system
 
-```
-gitmo -d [msg]
-```
+## Built With
 
-## Create Your own style commit
+- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+- [Maven](https://maven.apache.org/) - Dependency Management
+- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-You can create your own style commit just edit few files from dir and you can add your own style commit with just one command
+## Contributing
 
-### Folder Structure
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-    .
-    ├── lib                             # All helper files
-    ├── node_modules
-    ├── util                            # All Command Files
-        ├── command.js                  # Command Use in gitmo i.e (-i,-h,-p)
-        ├── deploy.js                   # Deploy Commit and push to server
-        ├── fixed.js                    # Fixed Commit and push to server
-        ├── help.js                     # Show Help on Shell
-        ├── init.js                     # Init Commit and push to server
-        ├── log.js                      # Log helper File
-        ├── readme.js                   # Readme Commit and push to server
-        ├── remove.js                   # Remove Commit and push to server
-        ├── update.js                   # Update Commit and push to server
-        └── emoji.js                    # All Emoji lives here
+## Versioning
 
-    ├── index.js                        # Starter Point
-    ├── package-lock.json
-    ├── readme.md
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
-> Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`
+## Authors
+
+- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
