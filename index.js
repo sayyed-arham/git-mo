@@ -11,7 +11,6 @@ const init = require("./util/init");
 const update = require("./util/update");
 const remove = require("./util/remove");
 const fixed = require("./util/fixed");
-const readme = require("./util/readme");
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -21,8 +20,8 @@ if (!shell.which("git")) {
 
 // Start Code Here
 // console.log("====================================");
-console.log(_);
-console.log(command);
+// console.log(_);
+// console.log(command);
 // console.log("====================================");
 
 // Checking GitHub Assess Token
@@ -56,12 +55,7 @@ if ("h" in command) {
     console.log(chalk.redBright("Commit is not exist"));
   }
 } else if (helperCommand.readme in command) {
-  // add readme.md file as README.MD and push
-  if (command[helperCommand.readme].length) {
-    readme(command[helperCommand.readme]);
-  } else {
-    readme("Readme Updated");
-  }
+  // add readme.md file as FIXED and push
 } else if (helperCommand.deploy in command) {
   // add d file as FIXED and push
 } else if (helperCommand.revert in command) {
