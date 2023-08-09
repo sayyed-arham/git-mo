@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const helper = require("../lib/git");
 
 const GitUpdate = async msg => {
+  debugger;
   const code = String(shell.exec("git status", { silent: true }).stdout).trim();
   const ModifiedFiles = helper.getModifiedFiles(code);
   const UntrackedFiles = helper.getUntrackedFiles(code);
@@ -37,3 +38,4 @@ const GitUpdate = async msg => {
 };
 
 module.exports = GitUpdate;
+// testing commit
