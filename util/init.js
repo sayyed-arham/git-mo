@@ -18,42 +18,59 @@ const initGit = async () => {
     await files.createGitignore();
     await files.createReadme();
 
-    shell.exec("git init");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
+    if ((await shell.exec("git init").code) !== 0) {
+      shell.echo(chalk.red("Error: Git commit failed"));
+      shell.exit(1);
+    }
 
     console.log(chalk.greenBright("Git is Initialized"));
     console.log(chalk.yellowBright("Adding All File in to your git"));
 
-    shell.exec("git add *");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
+    if ((await shell.exec("git add *").code) !== 0) {
+      shell.echo(chalk.red("Error: Git commit failed"));
+      shell.exit(1);
+    }
 
     console.log(chalk.greenBright("All Files Added "));
     console.log(chalk.yellowBright("Adding .gitignore file"));
 
-    shell.exec("git add .gitignore");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
+    if ((await shell.exec("git add .gitignore").code) !== 0) {
+      shell.echo(chalk.red("Error: Git commit failed"));
+      shell.exit(1);
+    }
 
     console.log(chalk.greenBright(".gitignore is added "));
     console.log(chalk.yellowBright("adding INIT commit to your repo"));
 
-    shell.exec(
-      `git commit -m "Initial: ${
-        emoji.init
-      } Initialize Project With Git and GitHub using GitMo-Cli "`
-    );
+    if (
+      (await shell.exec(
+        `git commit -m "Initial: ${
+          emoji.init
+        } Initialize Project With Git and GitHub using GitMo-Cli "`
+      ).code) !== 0
+    ) {
+      shell.echo(chalk.red("Error: Git commit failed"));
+      shell.exit(1);
+    }
     console.log(chalk.greenBright("commit is added!!! "));
 
     if (credentials) {
       console.log(chalk.yellowBright("adding remote master origin "));
-      shell.exec(`git remote add origin ${credentials.url}`);
+      if (
+        (await shell.exec(`git remote add origin ${credentials.url}`).code) !==
+        0
+      ) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
 
       console.log(chalk.greenBright("remote is added "));
       console.log(chalk.yellowBright("Pushing to master "));
 
-      shell.exec(`git push -u origin master`);
+      if ((await shell.exec(`git push -u origin master`).code) !== 0) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
 
       console.log(chalk.bgBlueBright("Remote is Updated"));
       console.log(chalk.blueBright(credentials.url));
