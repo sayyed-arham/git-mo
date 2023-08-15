@@ -3,14 +3,15 @@ const shell = require("shelljs");
 const chalk = require("chalk");
 
 const GitUpdate = async () => {
-  const code = String(shell.exec("git status", { silent: true }).stdout).trim();
   console.log("====================================");
-  console.log(getModifiedFiles(code));
-  console.log(getUntrackedFiles(code));
+  console.log(getModifiedFiles());
   console.log("====================================");
 };
 
-const getModifiedFiles = gitCode => {
+const getModifiedFiles = () => {
+  const gitCode = String(
+    shell.exec("git status", { silent: true }).stdout
+  ).trim();
   const tempArr = [
     `(use "git checkout -- <file>..." to discard changes in working directory)`,
     `Untracked files:`,
@@ -20,36 +21,21 @@ const getModifiedFiles = gitCode => {
   let firstIndex = gitCode.indexOf(tempArr[0]) + tempArr[0].length;
 
   if (!gitCode.includes(tempArr[0])) {
+    console.log("return false !!!");
     return false;
   }
   let secondIndex;
   if (gitCode.includes(tempArr[1])) {
+    console.log("i am true");
+
     secondIndex = gitCode.indexOf(tempArr[1]);
   } else if (gitCode.includes(tempArr[2])) {
+    console.log("i am true from 2");
     secondIndex = gitCode.indexOf(tempArr[2]);
   } else {
+    console.log("return false");
     return false;
   }
-  return String(gitCode.slice(firstIndex, secondIndex))
-    .replace(/modified:/g, "")
-    .replace(/\t/g, "")
-    .replace(/ /g, "")
-    .trim()
-    .split("\n");
-};
-
-const getUntrackedFiles = gitCode => {
-  const tempArr = [
-    `(use "git add <file>..." to include in what will be committed)`,
-    `no changes added to commit (use "git add" and/or "git commit -a")`
-  ];
-  let firstIndex = gitCode.indexOf(tempArr[0]) + tempArr[0].length;
-
-  if (!gitCode.includes(tempArr[0])) {
-    return false;
-  }
-
-  let secondIndex = gitCode.indexOf(tempArr[1]);
   return String(gitCode.slice(firstIndex, secondIndex))
     .replace(/modified:/g, "")
     .replace(/\t/g, "")
