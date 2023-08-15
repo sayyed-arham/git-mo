@@ -33,12 +33,7 @@ if ("h" in command) {
   init();
 } else if (helperCommand.update in command) {
   // add all file as UPDATE and push
-  if (command[helperCommand.update].length) {
-    update(command[helperCommand.update]);
-  }
-  console.log(chalk.redBright("Commit is not exist"));
-
-  process.exit();
+  update();
 } else if (helperCommand.remove in command) {
   // remove selected file from git and push
 } else if (helperCommand.fixed in command) {
