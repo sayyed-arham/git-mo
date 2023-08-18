@@ -30,10 +30,12 @@
   },
   "homepage": "https://github.com/hamsahmedansari/gitmo-cli#readme",
   "dependencies": {
-    "chalk": "^2.4.2",
+    "configstore": "^4.0.0",
     "figlet": "^1.2.1",
     "inquirer": "^6.3.1",
-    "shelljs": "^0.8.3",
+    "lodash": "^4.17.11",
+    "simple-git": "^1.110.0",
+    "touch": "^3.1.0",
     "yargs": "^13.2.2"
   },
   "preferGlobal": true,
